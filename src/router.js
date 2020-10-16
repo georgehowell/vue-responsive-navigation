@@ -5,7 +5,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    // mode: 'history',
     base: process.env.BASE_URL,
     routes: [{
             path: '/',
@@ -89,7 +89,6 @@ export default new Router({
             name: 'example-post',
             component: () => { return import ('./views/ExamplePost') }
         },
-      
         {
             path: '/portfolio',
             name: 'portfolio',

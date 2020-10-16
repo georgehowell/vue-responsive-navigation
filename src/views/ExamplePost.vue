@@ -1,3 +1,38 @@
+<script>
+  import { butter } from '@/buttercms'
+  export default {
+    name: 'example-post',
+     data () {
+      return {
+        post: {}
+        // post: null
+      }
+    },
+    methods: {
+      getPost () {
+        butter.post.retrieve(this.$route.params.slug)
+          .then(res => {
+            this.post = res.data
+          }).catch(res => {
+            console.log(res)
+          })
+      }
+    },
+    created () {
+      this.getPost()
+    },
+    watch: {
+      $route: {
+        immediate: true,
+        handler (to, from) {
+          this.getPost()
+        }
+      }
+    }
+
+  }
+</script>
+
 <template>
   <div id="example-post">
     <h1>{{ post.data.title }}</h1>
@@ -21,27 +56,7 @@
   </div>
 </template>
 
-<script>
-  import { butter } from '@/buttercms'
-  export default {
-    name: 'example-post',
-    data() {
-      return {
-        post: {}
-      }
-    },
-    methods: {
-      getPost() {
-        butter.post.retrieve(this.$route.params.slug)
-          .then(res => {
-            this.post = res.data
-          }).catch(res => {
-            console.log(res)
-          })
-      }
-    },
-    created() {
-      this.getPost()
-    }
-  }
-</script>
+<style scoped>
+    div {max-width: 80%; margin: 20px auto;}
+    img {max-height: 25vh; width: auto;}
+</style>

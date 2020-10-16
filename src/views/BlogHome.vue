@@ -1,3 +1,29 @@
+<script>
+  import { butter } from '@/buttercms'
+  export default {
+    name: 'blog-home',
+    data () {
+      return {
+        page_title: 'Blog',
+        posts: []
+      }
+    },
+    methods: {
+      getPosts () {
+        butter.post.list({
+          page: 1,
+          page_size: 10
+        }).then(res => {
+          this.posts = res.data.data
+        })
+      }
+    },
+    created () {
+      this.getPosts()
+    }
+  }
+</script>
+
 <template>
   <div id="blog-home">
       <h1>{{ page_title }}</h1>
@@ -30,28 +56,8 @@
   </div>
 </template>
 
-<script>
-  import { butter } from '@/buttercms'
-  export default {
-    name: 'blog-home',
-    data() {
-      return {
-        page_title: 'Blog',
-        posts: []
-      }
-    },
-    methods: {
-      getPosts() {
-        butter.post.list({
-          page: 1,
-          page_size: 10
-        }).then(res => {
-          this.posts = res.data.data
-        })
-      }
-    },
-    created() {
-      this.getPosts()
-    }
-  }
-</script>
+<style scoped>
+    figure img {height: 22vh; width: auto;}
+    div {max-width: 80%; margin: 20px auto;}
+    img {max-height: 25vh; width: auto;}
+</style>
