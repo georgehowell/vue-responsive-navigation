@@ -5,7 +5,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    // mode: 'history',
     base: process.env.BASE_URL,
     routes: [{
             path: '/',
@@ -77,12 +77,17 @@ export default new Router({
             component: () => { return import ('./views/CSSandJavascript.vue') }
         },
         {
-            path: '/blog',
-            name: 'blog',
+            path: '/blog/',
+            name: 'blog-home',
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => { return import ('./views/Blog.vue') }
+            component: () => { return import ('./views/BlogHome.vue') }
+        },
+        {
+            path: '/blog/:slug',
+            name: 'example-post',
+            component: () => { return import ('./views/ExamplePost') }
         },
         {
             path: '/portfolio',
