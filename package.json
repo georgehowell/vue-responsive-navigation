@@ -2,12 +2,15 @@
   "name": "vue-responsive-navigation",
   "version": "0.1.0",
   "private": true,
+  "description": "## Project setup ``` npm install ```",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint"
   },
+  "main": ".eslintrc.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
@@ -15,16 +18,16 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-plugin-eslint": "^4.5.7",
     "@vue/cli-plugin-unit-mocha": "^4.5.7",
     "@vue/cli-service": "^4.5.7",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "chai": "^4.1.2",
-    "eslint": "^5.16.0",
+    "eslint": "^6.7.2",
     "eslint-config-vue": "^2.0.2",
-    "eslint-plugin-vue": "^5.2.3",
+    "eslint-plugin-vue": "^6.2.2",
     "gsap": "^3.5.1",
     "lint-staged": "^8.1.5",
     "mem": "^5.1.1",
@@ -32,28 +35,25 @@
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },
+  "bugs": {
+    "url": "https://github.com/syntacticsolutions/vue-reponsive-navigation/issues"
+  },
+  "directories": {
+    "test": "tests"
+  },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
+  "homepage": "https://github.com/syntacticsolutions/vue-reponsive-navigation#readme",
+  "license": "ISC",
   "lint-staged": {
     "*.{js,vue}": [
       "vue-cli-service lint",
       "git add"
     ]
   },
-  "description": "## Project setup ``` npm install ```",
-  "main": ".eslintrc.js",
-  "directories": {
-    "test": "tests"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/syntacticsolutions/vue-reponsive-navigation.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/syntacticsolutions/vue-reponsive-navigation/issues"
-  },
-  "homepage": "https://github.com/syntacticsolutions/vue-reponsive-navigation#readme"
+  }
 }
